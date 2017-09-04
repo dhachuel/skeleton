@@ -13,13 +13,26 @@ import io.dropwizard.jersey.sessions.Session;
 // it must be annotated with at least @Path
 @Path("")
 @Produces(MediaType.TEXT_PLAIN)
-public class HelloWorldController {
+public class NetIDController {
+    final String netid;
+
+    public NetIDController(NetID netid) {
+        this.netid = netid.netid;
+    }
 
     // You can specify additional @Path steps; they will be relative
     // to the @Path defined at the class level
     @GET
-    @Path("/hello")
-    public String helloWorld(@Session HttpSession session) {
-        return "Hello World " + session.toString();
+    @Path("/")
+    public String getDefaultNetID() {
+        return this.netid;
+    }
+
+    // You can specify additional @Path steps; they will be relative
+    // to the @Path defined at the class level
+    @GET
+    @Path("/netid")
+    public String getNetID() {
+        return this.netid;
     }
 }

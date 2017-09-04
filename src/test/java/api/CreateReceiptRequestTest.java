@@ -11,6 +11,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.collection.IsEmptyCollection.empty;
 
+
 public class CreateReceiptRequestTest {
 
     private final Validator validator = Validators.newValidator();
